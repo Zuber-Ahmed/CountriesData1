@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { CourseData } from './components/CourseData/CourseData';
+import { FetchedData } from './components/FetchedData';
 import './App.css';
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import { CourseDetails } from './components/CourseData/CourseDetails';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <h1>Welcome to My Weather App </h1>
+      <FetchedData/> */}
+      <BrowserRouter>
+      
+      <Routes>
+        <Route path='/' element={<CourseData/>}/>
+        <Route path='/coursedetails' element={<CourseDetails/>}/>
+      </Routes>
+      </BrowserRouter>
+      {/* <CourseData/> */}
     </div>
   );
 }
